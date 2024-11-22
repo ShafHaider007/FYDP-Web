@@ -1,0 +1,21 @@
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-image: linear-gradient(
+      rgba(0, 0, 50, 0.5),
+      rgba(0, 0, 50, 0.5)
+    ),
+    url('../src/assets/images/homepage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
