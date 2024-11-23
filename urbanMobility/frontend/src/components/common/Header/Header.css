@@ -2,21 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 1.5rem 3rem;
   color: var(--white);
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #003366; /* Light semi-transparent background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
-  backdrop-filter: blur(5px); /* Adds a blur effect */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur background */
 }
 
 .site-header .logo {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--primary-color); /* Ensure it's visible against the light background */
+}
+
+.site-header .logo-img {
+  width: 40px;  /* Adjust the size of the logo */
+  height: auto;
+  margin-right: 0.5rem; /* Add spacing between logo and text */
 }
 
 .site-header .nav-links {
@@ -29,13 +35,13 @@
 
 .site-header .nav-links a {
   text-decoration: none;
-  font-size: 1rem;
-  color: var(--primary-color); /* Change color to suit light background */
+  font-size: 1.1rem;
+  color: var(--white);
   padding: 0.5rem;
   transition: color 0.3s ease;
 }
 
 .site-header .nav-links a:hover {
-  color: var(--accent-color); /* Add a hover color */
+  color: var(--accent-blue);
   text-decoration: underline;
 }

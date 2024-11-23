@@ -1,5 +1,7 @@
 import React from "react";
 import "./Header.css";
+import logo from "urbanMobility/frontend/src/assets/images/logo1.png"; 
+
 
 const Header = () => {
   const scrollToSection = (sectionId) => {
@@ -11,7 +13,9 @@ const Header = () => {
 
   return (
     <header className="site-header">
-      <div className="logo">Move Smart</div>
+      <div className="logo">
+      <img src={logo} alt="Move Smart Logo" className="logo-img" />
+        Move Smart</div>
       <nav>
         <ul className="nav-links">
           <li onClick={() => scrollToSection("home-section")}>
