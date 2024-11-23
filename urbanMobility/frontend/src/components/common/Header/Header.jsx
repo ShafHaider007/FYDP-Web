@@ -1,9 +1,11 @@
 import React from "react";
 import "./Header.css";
-import logo from "urbanMobility/frontend/src/assets/images/logo1.png"; 
+import logo from  "../../../assets/images/logo11.png";
 
 
-const Header = () => {
+
+
+function Header() {
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId).scrollIntoView({
       behavior: "smooth",
@@ -14,7 +16,7 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="logo">
-      <img src={logo} alt="Move Smart Logo" className="logo-img" />
+        <img src={logo} alt="Move Smart Logo" className="logo-img" />
         Move Smart</div>
       <nav>
         <ul className="nav-links">
@@ -34,6 +36,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default Header;
