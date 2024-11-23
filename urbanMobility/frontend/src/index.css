@@ -8,14 +8,39 @@
   --light-gray: #f3f4f6;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%; /* Ensures the body spans the full viewport height */
   font-family: 'Poppins', Arial, sans-serif;
   background-color: var(--dark-gray);
   color: var(--white);
 }
 
+body {
+  display: flex;
+  flex-direction: column; /* Makes the body layout a column */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Ensures the content spans at least the full height */
+}
+
+.app-container {
+  flex: 1; /* Expands the main content area to fill available space */
+}
+
+footer {
+  flex-shrink: 0; /* Prevents the footer from overlapping the main body */
+  background-color: var(--primary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Link styles */
 a {
   color: var(--accent-blue);
   text-decoration: none;
@@ -26,6 +51,7 @@ a:hover {
   color: var(--light-blue);
 }
 
+/* Button styles */
 button {
   background-color: var(--primary-blue);
   color: var(--white);
@@ -39,4 +65,17 @@ button {
 
 button:hover {
   background-color: var(--secondary-blue);
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
 }
