@@ -1,0 +1,48 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px; /* Reduce the height */
+  padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--primary-blue); /* Retain background color */
+  backdrop-filter: blur(5px); /* Blur background */
+}
+
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.site-header .logo-img {
+  width: 110px;  /* Adjust the size of the logo */
+  height: auto;
+  margin-right: 0.5rem; /* Add spacing between logo and text */
+}
+
+.site-header .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .nav-links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--white);
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.site-header .nav-links a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
