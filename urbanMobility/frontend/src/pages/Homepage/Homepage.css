@@ -1,44 +1,318 @@
-.home-page {
+/* Hero Section */
+.hero {
+  background: url('../src/assets/images/Background2.jpg.webp') no-repeat center center/cover;
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-color: #f0f0f0; /* Fallback color if image doesn't load */
+  height: 100vh; /* Full viewport height */
+  color: rgb(59, 57, 57);
   display: flex;
-  flex: 1;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Prevent gaps around the section */
+  padding: 0; /* Ensure no extra padding inside the hero */
+  position: relative; /* Position the section relative to other elements */
+}
+
+/* Hero Content Wrapper */
+.hero-content {
   text-align: center;
-  color: var(--white);
-  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 2rem; /* Add space inside the box */
+  border-radius: 10px; /* Rounded corners for the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-.home-page h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: var(--light-blue);
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  margin: 0;
-  animation: fadeIn 1.5s ease-in-out;
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: rgb(59, 57, 57); /* Ensure text contrasts with the box */
 }
 
-.home-page p {
-  font-size: 1.4rem;
-  margin-top: 1.5rem;
-  color: var(--light-gray);
-  max-width: 700px;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgb(59, 57, 57);
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* About Us Section */
+.about-us {
+  background-color: #e8f5e9;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-us-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 500px;
+  font-size: 1.2rem;
+  color: #666;
   line-height: 1.8;
-  border-left: 4px solid var(--accent-blue);
-  padding-left: 15px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 2.5s ease-in-out;
+  text-align: center;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+.about-slideshow {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.slideshow img.active {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slide-btn.prev {
+  left: 10px;
+}
+
+.slide-btn.next {
+  right: 10px;
+}
+
+.slide-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/* About Us Section */
+.about-us {
+  background-color: #e8f5e9;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.about-us-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-us-text {
+  flex: 1;
+  padding: 1rem;
+  max-width: 50%; /* Restrict the left side to half */
+}
+
+.about-us-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-us-text p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.about-us-slideshow {
+  flex: 1;
+  padding: 1rem;
+  max-width: 50%; /* Restrict the right side to half */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slideshow Images */
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Start off-screen */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.slideshow img.active {
+  left: 0; /* Move into view */
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Slideshow Buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slide-btn.prev {
+  left: 10px;
+}
+
+.slide-btn.next {
+  right: 10px;
+}
+
+.slide-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .about-us-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-us-slideshow {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+
+/* Service Boxes */
+.service-boxes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.service-box {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 30%;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.service-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.service-box p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-box {
+    width: 100%;
   }
 }

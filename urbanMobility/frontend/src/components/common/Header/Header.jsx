@@ -1,28 +1,41 @@
 import React from "react";
 import "./Header.css";
+import logo from  "../../../assets/images/logo11.png";
 
-const Header = () => {
+
+
+
+function Header() {
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <header className="site-header">
-      <div className="logo">Move Smart</div>
+      <div className="logo">
+        <img src={logo} alt="Move Smart Logo" className="logo-img" />
+        Move Smart</div>
       <nav>
         <ul className="nav-links">
-          <li>
-            <a href="/">Home</a>
+          <li onClick={() => scrollToSection("home-section")}>
+            <a href="#home-section">Home</a>
           </li>
-          <li>
-            <a href="/about">About</a>
+          <li onClick={() => scrollToSection("about-section")}>
+            <a href="#about-section">About</a>
           </li>
-          <li>
-            <a href="/services">Services</a>
+          <li onClick={() => scrollToSection("services-section")}>
+            <a href="#services-section">Services</a>
           </li>
-          <li>
-            <a href="/contact">Contact</a>
+          <li onClick={() => scrollToSection("contact-section")}>
+            <a href="#contact-section">Contact</a>
           </li>
         </ul>
       </nav>
     </header>
   );
-};
+}
 
 export default Header;
