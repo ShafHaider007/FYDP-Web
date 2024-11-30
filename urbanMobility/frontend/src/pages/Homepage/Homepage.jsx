@@ -20,9 +20,21 @@ const HomePage = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
     return () => clearInterval(timer);
   }, [images.length]);
+
+  const handleSlideshow = (direction) => {
+    if (direction === "prev") {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    } else {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
 
   return (
     <div className="homepage">
@@ -39,50 +51,47 @@ const HomePage = () => {
 
       {/* About Us Section */}
       <section id="about-us" className="section about-us" data-aos="fade-right">
-  <div className="about-us-container">
-    {/* Left Side: Heading and Text */}
-    <div className="about-us-text">
-      <h2>About Us</h2>
-      <p>
-        Move Smart is dedicated to empowering smarter urban mobility solutions.
-        Our vision is to create sustainable and efficient cities by integrating
-        innovative technology, actionable insights, and collaboration.
-      </p>
-      <p>
-        With a focus on real-time data and user-friendly tools, we help city
-        planners and communities make informed decisions for a better future.
-      </p>
-    </div>
+        <div className="about-us-container">
+          <div className="about-us-text">
+            <h2>About Us</h2>
+            <p>
+              Move Smart is dedicated to empowering smarter urban mobility solutions.
+              Our vision is to create sustainable and efficient cities by integrating
+              innovative technology, actionable insights, and collaboration.
+            </p>
+            <p>
+              With a focus on real-time data and user-friendly tools, we help city
+              planners and communities make informed decisions for a better future.
+            </p>
+          </div>
+          <div className="about-us-slideshow">
+            <div className="slideshow">
+              <button
+                className="slide-btn prev"
+                onClick={() => handleSlideshow("prev")}
+              >
+                &#8249;
+              </button>
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className={index === currentIndex ? "active" : ""}
+                />
+              ))}
+              <button
+                className="slide-btn next"
+                onClick={() => handleSlideshow("next")}
+              >
+                &#8250;
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    {/* Right Side: Slideshow */}
-    <div className="about-us-slideshow">
-      <div className="slideshow">
-        <button
-          className="slide-btn prev"
-          onClick={() => handleSlideshow("prev")}
-        >
-          &#8249;
-        </button>
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Slide ${index + 1}`}
-            className={`slide ${index === currentIndex ? "active" : ""}`}
-          />
-        ))}
-        <button
-          className="slide-btn next"
-          onClick={() => handleSlideshow("next")}
-        >
-          &#8250;
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Other sections (Our Services) */}
+      {/* Services Section */}
       <section id="services" className="section services" data-aos="fade-right">
         <h2>Our Services</h2>
         <p className="services-description">
@@ -102,11 +111,7 @@ const HomePage = () => {
               planners optimize infrastructure placement.
             </p>
           </div>
-          <div
-            className="service-box"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
+          <div className="service-box" data-aos="fade-up" data-aos-delay="200">
             <img
               src={service2Img}
               alt="Smart Route Optimization"
@@ -118,11 +123,7 @@ const HomePage = () => {
               routes using live traffic data.
             </p>
           </div>
-          <div
-            className="service-box"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
+          <div className="service-box" data-aos="fade-up" data-aos-delay="400">
             <img
               src={service3Img}
               alt="Data Insights for Urban Planners"
