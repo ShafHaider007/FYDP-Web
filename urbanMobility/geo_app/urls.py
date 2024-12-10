@@ -1,10 +1,6 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet
-
-router = DefaultRouter()
-router.register(r'tasks', TaskViewSet)
+from django.urls import path
+from .views import cadastral_map
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("api/maps/cadastral/", cadastral_map, name="cadastral_map"),
 ]

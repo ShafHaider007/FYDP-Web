@@ -1,0 +1,10 @@
+.ol-popup {
+  background: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 100;
+  transform: translate(-50%, -100%);
+}
