@@ -4,7 +4,7 @@
   --accent-blue: #3b82f6;
   --light-blue: #e3effe;
   --white: #ffffff;
-  --dark-gray: #ffffff;
+  --dark-gray: #333333; /* Corrected dark gray for readability */
   --light-gray: #f3f4f6;
 }
 
@@ -35,7 +35,7 @@ body {
 footer {
   flex-shrink: 0; /* Prevents the footer from overlapping the main body */
   background-color: var(--primary-blue);
-  color: var(--white);
+  color: var(--light-gray); /* Updated for contrast */
   text-align: center;
   padding: 2rem 1rem;
 }

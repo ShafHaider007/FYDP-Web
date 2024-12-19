@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import cadastral_map
+from . import views
 
 urlpatterns = [
-    path("api/maps/cadastral/", cadastral_map, name="cadastral_map"),
+    
 ]
