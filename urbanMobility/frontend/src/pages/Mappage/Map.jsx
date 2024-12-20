@@ -14,11 +14,7 @@ const Map = () => {
         {/* Placeholder for the Map component */}
         <MapDisplay />
 
-        {/* Additional information or components */}
-        <section className="info-section">
-          <h2>How to Use</h2>
-          <p>Zoom in, pan around, and click markers for detailed insights.</p>
-        </section>
+        
       </main>
     </div>
   );
